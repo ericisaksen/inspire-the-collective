@@ -1,0 +1,104 @@
+$primary: #1a6cc2;
+$secondary: #1a1a1a;
+html, body{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-size: 18px;
+}
+*{
+  box-sizing: border-box;
+}
+.page-container{
+  text-align: center;
+  padding: 2em;
+  h2{
+  }
+  h3{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $primary;
+  }
+  img{
+    width: 300px;
+    max-width: 85%;
+  }
+}
+input{
+  height: 55px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  max-width: 90%;
+  padding: 0 1em;
+}
+.button{
+  display: inline-block;
+  padding: 1em 2em;
+  border: none;
+  background: $primary;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+    background: $secondary;
+  }
+}
+.cta-container{
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  z-index: 9999;
+  width: 450px;
+  max-width: 90%;
+  left: -99999px;
+  opacity: 0;
+  transition: opacity .5s ease-in-out 0s, left 0s ease-in-out .5s;
+  button{
+    font-size: .65em;
+    text-transform: uppercase;
+  }
+  .cta-active &{
+    display: block;
+    left: 50%;
+    opacity: 1;
+    transition: opacity .5s ease-in-out 0s, left 0s ease-in-out 0s;
+  }
+  .close-cta{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: $primary;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }
+}
+.cta-cast{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, .75);
+  cursor: pointer;
+  left: -99999px;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity .5s ease-in-out 0s, left 0s ease-in-out .5s;
+  .cta-active & {
+    left: 0;
+    opacity: 1;
+    transition: opacity .5s ease-in-out 0s, left 0s ease-in-out 0s;
+  }
+}
